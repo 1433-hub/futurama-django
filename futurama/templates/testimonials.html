@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+Testimonials
+{% endblock title %}
+{% block content %}
+<div class="section pp-scrollable slide slide-testimonials slide-light a-slide-typed" data-name="testimonials">
+    <div class="slide-container">
+        <div class="container">
+            {% for testimonial in testimonials%}
+            <div class="row align-items-end">
+                <div class="col-lg-6">
+                    <div class="testimonial-left-image rmb-75 animate-element delay5 fadeInUp">
+                        <img src="{{ testimonial.image.url }}" alt="testimonials">
+                        <img class="shape-one animate-element delay8 bounceIn" src="{% static 'images/testimonials/shape-one.png' %}" alt="shape">
+                        <img class="shape-two animate-element delay5 zoomInLeft" src="{% static 'images/testimonials/shape-two.png' %}" alt="shape">
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="testimonials-content ml-lg-auto rel">
+                        <div class="section-title mb-35">
+                            <span class="sub-title mb-45 animate-element delay6 fadeInUp">{{ testimonial.title }}</span>
+                            <h2 class="slide-title animate-element delay7 fadeInUp"> <span class="text-typed a-typed a-typed-testimonials" data-text="{{ testimonial.title }}"></span></h2>
+                        </div>
+                        <div class="testimonials-wrap animate-element delay9 fadeInUp">
+                            {% for feedback in get_testimonials %}
+                            <div class="testimonial-item">
+                                <p>{{ feedback.description }}</p>
+                                <div class="author-details">
+                                    <img src="{{ feedback.image.url }}" alt="Author">
+                                    <div class="content">
+                                        <h5>{{ feedback.name }}</h5>
+                                        <span class="designation"><span>{{ feedback.designation }}</span></span>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                        <div class="testimonial-icon animate-element delay11 zoomIn">
+                            <i class="fas fa-equals"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock content %}

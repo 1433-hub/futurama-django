@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+Project
+{% endblock title %}
+{% block content %}
+<div class="section pp-scrollable slide slide-services slide-light slide-services a-slide-typed" data-name="services">
+    <div class="slide-container">
+        <div class="container">
+            {% for project in project %}
+            <div class="row align-items-center">
+                <div class="col-lg-7">
+                    <div class="service-image animate-element delay4 fadeInUp">
+                        <span class="sub-title mb-75">{{ project.title }}</span>
+                        <div class="service-inner-images">
+                            <img src="{{ project.image.url }}" alt="{{ project.title }}">
+                            <img class="shape-one animate-element delay6 bounceIn" src="{% static 'images/services/shape-one.png' %}" alt="shape">
+                            <img class="shape-two animate-element delay8 bounceIn" src="{% static 'images/services/shape-two.png' %}" alt="shape">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <div class="service-content pt-100 rpt-55 animate-element delay5 fadeInUp">
+                        <div class="section-title mb-25">
+                            <h2 class="slide-title animate-element delay5 fadeInUp"><span class="text-typed a-typed a-typed-services" data-text="PROJECT"></span></h2>
+                        </div>
+                        <p class="animate-element delay6 fadeInUp">{{ project.description }}</p>
+                        <div class="our-services animate-element delay8 fadeInUp">
+                            {% for project_name in project_name %}
+                            <div class="service-item">
+                                <div class="icon">
+                                    <img src="{{ project_name.image.url }}" alt="Icon">
+                                </div>
+                                <p>{{ project_name.title }}</p>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock content %}

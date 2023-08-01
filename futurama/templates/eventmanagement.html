@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block title %}
+Event Management
+{% endblock title %}
+{% block content %}
+<div class="section pp-scrollable slide slide-portfolio a-slide-typed" data-name="portfolio">
+    <div class="slide-container">
+        <div class="container">
+            {% for event in event_management %}
+            <div class="row align-items-center justify-content-between mb-25">
+                <div class="col-xl-5 col-lg-6">
+                    <div class="portfolio-content">
+                        <div class="section-title mb-35">
+                            <span class="sub-title mb-45 animate-element delay5 fadeInUp">{{ event.title }}</span>
+                            <h2 class="slide-title animate-element delay6 fadeInUp"><span class="text-typed a-typed a-typed-portfolio" data-text="{{ event.title }}"></span></h2>
+                        </div>
+                        <p class="animate-element delay7 fadeInUp">{{ event.description }}<b></b></p>
+                        {% comment %} <a href="blog.html" class="read-more mt-45 rmt-25 animate-element delay8 fadeInUp">Explore More <i class="fas fa-long-arrow-alt-right"></i></a> {% endcomment %}
+                    </div>
+                </div>
+                <div class="col-xl-5 col-lg-6">
+                    <div class="counter-wrap rmb-15 animate-element delay9 fadeInUp">
+                        <div class="success-box">
+                            <span class="count-text lass-than-ten" data-speed="3000" data-stop="{{ event.experience }}">0</span>
+                            <h6>Years of Experience</h6>
+                        </div>
+                        <div class="success-box">
+                            <span class="count-text plus" data-speed="3000" data-stop="{{ event.student_number}}">0</span>
+                            <h6>Satisfied Students</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="portfolio-wrap">
+                {% for manager in oic %}
+                <div class="portfolio-item animate-element delay11 fadeInUp">
+                    <img src="{{ manager.image.url }}" alt="{{ manager.title }}">
+                </div>
+                {% endfor %}
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock content %}

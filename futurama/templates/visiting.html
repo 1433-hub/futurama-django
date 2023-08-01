@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+Visiting
+{% endblock title %}
+{% block content %}
+<div class="section pp-scrollable slide slide-skills a-slide-typed" data-name="skills">
+    <div class="slide-container">
+        <div class="container">
+            {% for visiting in visiting %}
+            <div class="row align-items-center">
+                <div class="col-lg-5">
+                    <div class="skill-content animate-element delay5 fadeInUp">
+                        <div class="section-title mb-25">
+                            <span class="sub-title mb-45">{{ visiting.title }}</span>
+                            <h2 class="slide-title animate-element delay5 fadeInUp"><span class="text-typed a-typed a-typed-skills" data-text="VISITING"></span></h2>
+                        </div>
+                        <p class="animate-element delay6 fadeInUp">{{ visiting.description }}</p>
+                        <div class="bar-list a-progressbar pt-5 animate-element delay9 fadeInUp">
+                            {% for name in visiting_name %}
+                            <div class="bar-item">
+                                <div class="row">
+                                    <div class="col bar-item-title">{{ name.title }}</div>
+                                    <div class="col-auto text-right bar-item-value">{{ name.ongoing}}</div>
+                                </div>
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" aria-valuenow="{{ name.number }}" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="skill-image pt-55 text-lg-right animate-element delay4 fadeInUp">
+                        <div class="skill-images-inner">
+                            <img src="{{ visiting.image.url }}" alt="Skills">
+                            <img class="shape-one animate-element delay6 bounceIn" src="{% static 'images/skills/shape-one.png' %}" alt="shape">
+                            <img class="shape-two animate-element delay8 bounceIn" src="{% static 'images/skills/shape-two.png' %}" alt="shape">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock content %}

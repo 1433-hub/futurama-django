@@ -1,0 +1,111 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <!--====== Required meta tags ======-->
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="description" content="" />
+    <meta name="author" content="WebTend">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <!--====== Title ======-->
+    <title>Futurama || {% block title %} {% endblock title %}</title>
+    <!--====== Favicon Icon ======-->
+    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon">
+    <!--====== Google Fonts ======-->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <!--====== FontAwesome ======-->
+    <link href="{% static 'css/fontawesome.5.9.0.min.css' %}" rel="stylesheet">
+    <!--====== Bootstrap ======-->
+    <link href="{% static 'css/bootstrap-4.5.3.min.css'%}" rel="stylesheet">
+    <!--====== Spacing ======-->
+    <link href="{% static 'css/spacing.min.css' %}" rel="stylesheet">
+    <!--====== PagePiling ======-->
+    <link href="{% static 'css/jquery.pagepiling.css' %}" rel="stylesheet">
+    <!--====== Slick Slider ======-->
+    <link href="{% static 'css/slick.min.css' %}" rel="stylesheet">
+    <!--====== Animate CSS ======-->
+    <link href="{% static 'css/animate.min.css' %}" rel="stylesheet">
+    <!--====== Main css ======-->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <!--====== Responsive css ======-->
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+</head>
+
+<body class="body-piling">
+    <div class="wrapper">
+        <!-- Preloader -->
+        <div class="preloader"></div>
+        <header id="header" class="header">
+            <div class="container-fluid">
+                <div class="brand">
+                    <a href="{% url 'home' %}" class="brand-name"><b>Futu</b>rama</a>
+                </div>
+                <button class="nav-toggle-btn a-nav-toggle">
+                    <span class="hamburger">
+                        <span class="top-bun"></span>
+                        <span class="meat"></span>
+                        <span class="bottom-bun"></span>
+                    </span>
+                </button>
+                <div class="hide-menu a-nav-toggle"></div>
+                <div class="menu">
+                    <div class="menu-main mt-100" id="accordion">
+                        <ul id="menuMain">
+                            <li data-menuanchor="About" class="active"><a href="{% url 'home' %}">About</a></li>
+                            <li data-menuanchor="Services"><a href="{% url 'project' %}">Project</a></li>
+                            <li data-menuanchor="Skills"><a href="{% url 'visiting' %}">Visiting</a></li>
+                            <li data-menuanchor="Resume"><a href="{% url 'operation' %}">Operation</a></li>
+                            <li data-menuanchor="Portfolio"><a href="{% url 'event-management' %}">Event Management</a></li>
+                            <li data-menuanchor="Testimonials"><a href="{% url 'testimonials' %}">Testimonials</a></li>
+                            <li data-menuanchor="Weapons"><a href="{% url 'my-weapons' %}">Weapons</a></li>
+                            <li data-menuanchor="Contact"><a href="{% url 'contact' %}">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="menu-ornament"></div>
+                </div>
+            </div>
+        </header>
+        <div id="content">
+            <div class="a-pagepiling full-page">
+                {% block content %}
+                {% endblock content %}
+            </div>
+        </div>
+        <div class="container-fliuid">
+            <div class="progress-nav">
+                <ul id="menu">
+                    <li data-menuanchor="About" class="active"></li>
+                    <li data-menuanchor="Services"></li>
+                    <li data-menuanchor="Skills"></li>
+                    <li data-menuanchor="Resume"></li>
+                    <li data-menuanchor="Portfolio"></li>
+                    <li data-menuanchor="Testimonials"></li>
+                    <li data-menuanchor="Weapons"></li>
+                    <li data-menuanchor="Contact"></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--====== Jquery ======-->
+    <script src="{% static 'js/jquery-3.6.0.min.js' %}"></script>
+    <!--====== Bootstrap ======-->
+    <script src="{% static 'js/bootstrap.4.5.3.min.js' %}"></script>
+    <!--====== PagePiling ======-->
+    <script src="{% static 'js/jquery.pagepiling.min.js' %}"></script>
+    <!--====== Jquery Viewport ======-->
+    <script src="{% static 'js/jquery.viewport.js' %}"></script>
+    <!--====== SmoothScroll ======-->
+    <script src="{% static 'js/smoothscroll.js' %}"></script>
+    <!--====== Popper ======-->
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <!--====== Slick Slider ======-->
+    <script src="{% static 'js/slick.min.js' %}"></script>
+    <!--====== Typed ======-->
+    <script src="{% static 'js/typed.min.js' %}"></script>
+    <!--====== Main JS ======-->
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+
+</html>

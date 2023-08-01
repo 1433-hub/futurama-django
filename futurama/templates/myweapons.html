@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block title %}
+My Weapons
+{% endblock title %}
+{% block content %}
+<div class="section pp-scrollable slide slide-weapons a-slide-typed" data-name="weapons">
+    <div class="slide-container">
+        <div class="container">
+            {% for weapon in my_weapon %}
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="weapons-content rmb-75 animate-element delay5 fadeInUp">
+                        <div class="section-title mb-35">
+                            <span class="sub-title mb-45">{{ weapon.title }}</span>
+                            <h2 class="slide-title animate-element delay5 fadeInUp"><span class="text-typed a-typed a-typed-weapons" data-text="favorite tools"></span> which we Used.</h2>
+                        </div>
+                        <p class="animate-element delay6 fadeInUp">{{ weapon.description }}</p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="weapons-images">
+                        {% for tools in favorite_tools %}
+                        <div class="weapons-item {{ tools.give_number }} animate-element delay{{ tools.id }} {{ tools.animation}}">
+                            <img src="{{ tools.image.url }}" alt="{{ tools.title }}">
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock content %}

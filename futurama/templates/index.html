@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+Home
+{% endblock title %}
+{% block content %}
+<div class="section pp-scrollable slide slide-about a-slide-typed" data-name="about">
+    <div class="slide-container">
+        <div class="container">
+            <div class="number-email-cv">
+                <ul class="number-email">
+                    <li>Call me <a href="callto:(+778)675-0765">(+977) 9801022144</a></li>
+                    <li><a href="mailto:hello_niharika@gmail.com">gaganhang.limbu@islingtoncollege.edu.np</a></li>
+                </ul>
+            </div>
+            {% for home in home %}
+            <div class="row align-items-center">
+                <div class="col-lg-5">
+                    <div class="about-content pt-100 rpt-0 animate-element delay5 fadeInUp">
+                        <span class="sub-title mb-15 animate-element delay3 fadeInUp">About Me</span>
+                        <h1 class="slide-title animate-element delay5 fadeInUp"><span class="text-typed a-typed a-typed-about" data-text="{{ home.title }}"></span></h1>
+                        <h3 class="animate-element delay7 fadeInUp">{{home.slogan}}</h3>
+                        <p class="animate-element delay8 fadeInUp">{{ home.description }}</p>
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="about-image pt-100 rpt-50 text-lg-right">
+                        <div class="about-inner-images">
+                            <img class="animate-element delay7 fadeInUp" src="{{ home.image.url }}" alt="About">
+                            <img class="shape-one animate-element delay10 bounceIn" src="{% static 'images/about/shape-one.png' %}" alt="Shape">
+                            <img class="shape-two animate-element delay11 bounceIn" src="{% static 'images/about/shape-two.png' %}" alt="Shape">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock content %}
